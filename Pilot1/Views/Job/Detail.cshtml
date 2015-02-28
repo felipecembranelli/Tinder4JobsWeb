@@ -1,0 +1,31 @@
+﻿@model Pilot1.ViewModels.JobDetailViewModel
+
+@{
+    ViewBag.Title = "Job Details";
+}
+
+<h4>Job Detail</h4>
+<hr />
+<div class="form-group">
+    <span class="col-md-2 control-label">Company</span>
+    <div class="col-md-10">
+        @Html.LabelFor(m => m.CompanyName, new { @class = "col-md-2 control-label" })
+    </div>
+</div>
+<div class="form-group">
+    <span class="col-md-2 control-label">Location</span>
+    <div class="col-md-10">
+        @Html.LabelFor(m => m.LocationDescription, new { @class = "col-md-2 control-label" })
+    </div>
+</div>
+<div class="form-group">
+    <span class="col-md-2 control-label">Description</span>
+    <div class="col-md-10">
+        @Html.LabelFor(m => m.DescriptionSnippet, new { @class = "col-md-2 control-label" })
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

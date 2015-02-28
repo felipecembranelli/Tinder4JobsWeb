@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Tinder4Jobs</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/jTinder.css")
+    
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/Home">
+                    <img class="img-thumbnail" src="~/Images/Tinder4JobsTopLogo.jpg" alt="">
+                    </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Job List", "Index", "Job/Like")</li>
+                    <li>@Html.ActionLink("Profile", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Tinder4Jobs</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Scripts/jquery.transform2d.js")
+    @Scripts.Render("~/Scripts/jquery.jTinder.js")
+    @Scripts.Render("~/Scripts/main.js")
+
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

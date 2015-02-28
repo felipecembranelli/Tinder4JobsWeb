@@ -1,0 +1,91 @@
+﻿@model List<Pilot1.Models.LinkedinJob>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<!-- Page Content -->
+<div class="container">
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Linkedin jobs
+                <small>Your jobs suggestions from linkedin</small>
+            </h1>
+        </div>
+    </div>
+
+    <div class="wrap">
+        <!-- start jtinder container -->
+        <div id="tinderslide">
+            <ul>
+                @foreach (var item in Model)
+                {
+                    <li>
+                        <div class="col-md-5">
+                            <a href="#">
+                                <img class="img-thumbnail" src="~/Images/linkedin7.png" alt="">
+                            </a>
+                        </div>
+                        <div class="col-md-5">
+                            <h3>@Html.DisplayFor(modelItem => item.Company.Name)</h3>
+                            <h4>@Html.DisplayFor(modelItem => item.LocationDescription)</h4>
+                            <p>@Html.DisplayFor(modelItem => item.DescriptionSnippet)</p>
+                            @*<a class="btn btn-primary" href="~/Job/Detail/1">View Detail <span class="glyphicon glyphicon-chevron-right"></span> </a>*@
+                            @Html.ActionLink("View Detail", "JobDetail", null, null, new { id = "btnSearch", @class = "btn btn-primary" })
+                        </div>
+                        <div class="like"></div>
+                        <div class="dislike"></div>
+                    </li>
+
+                }
+            </ul>
+        </div>
+
+        <!-- jTinder trigger by buttons  -->
+        <div class="actions">
+            <a href="#" class="dislike"><i></i></a>
+            <a href="#" class="like"><i></i></a>
+        </div>
+        <!-- jTinder status text  -->
+        <div id="status"></div>
+
+        <hr>
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2014</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+    </div>
+
+</div>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" id="modalContent">
+                <p>LOCAL ONDE APARECERÁ A MODAL</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- /.container -->
+    @section Scripts {
+        <script type="text/javascript">
+        $(function () {
+
+            $('.btn-primary').on('click', function (e) {
+                $('#modalContent').load(this.href, function () {
+                    $('#myModal').modal('show');
+                });
+                return false;
+            });
+        });
+
+        </script>
+    }
