@@ -7,7 +7,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Owin.Security.Providers.LinkedIn;
 
-namespace Pilot1.Utils
+namespace Tinder4Jobs.InfraStructure
 {
     public class CustomLinkedinAuthenticationProvider : LinkedInAuthenticationProvider
     {

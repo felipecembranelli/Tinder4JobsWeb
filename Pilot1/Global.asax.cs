@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace Pilot1
+namespace Tinder4Jobs.Web
 {
     public class MvcApplication : System.Web.HttpApplication
     {

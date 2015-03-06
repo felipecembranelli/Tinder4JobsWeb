@@ -1,19 +1,20 @@
-namespace Pilot1.Migrations
+namespace Tinder4Jobs.Web.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using Tinder4Jobs.Web;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Pilot1.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<ApplicationDbContext>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
-            ContextKey = "Pilot1.Models.ApplicationDbContext";
+            AutomaticMigrationsEnabled = false;
+            ContextKey = "Tinder4Jobs.Web.ApplicationDbContext";
         }
 
-        protected override void Seed(Pilot1.Models.ApplicationDbContext context)
+        protected override void Seed(ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

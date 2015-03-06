@@ -1,20 +1,17 @@
-﻿using Newtonsoft.Json;
-using Pilot1.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Xml.Serialization;
 using Pilot1.Data.Repositories;
+using Tinder4Jobs.Domain;
 
 
-namespace Pilot1.Services
+namespace Tinder4Jobs.Services
 {
     public class LinkedInService
     {

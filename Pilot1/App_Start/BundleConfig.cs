@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace Pilot1
+namespace Tinder4Jobs.Web
 {
     public class BundleConfig
     {

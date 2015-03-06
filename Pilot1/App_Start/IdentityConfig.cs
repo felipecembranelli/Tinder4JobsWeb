@@ -10,9 +10,8 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using Pilot1.Models;
 
-namespace Pilot1
+namespace Tinder4Jobs.Web
 {
     public class EmailService : IIdentityMessageService
     {

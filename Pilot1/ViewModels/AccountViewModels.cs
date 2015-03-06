@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Pilot1.Models
+namespace Tinder4Jobs.Web.ViewModels
 {
     public class ExternalLoginConfirmationViewModel
     {

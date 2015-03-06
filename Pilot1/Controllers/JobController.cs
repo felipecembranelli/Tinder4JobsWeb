@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Pilot1.Controllers
+namespace Tinder4Jobs.Web.Controllers
 {
     public class JobController : Controller
     {

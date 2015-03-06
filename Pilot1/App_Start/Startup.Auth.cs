@@ -5,13 +5,12 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using Pilot1.Models;
 using Owin.Security.Providers.LinkedIn;
 using System.Configuration;
 using System.Threading.Tasks;
-using Pilot1.Utils;
+using Tinder4Jobs.InfraStructure;
 
-namespace Pilot1
+namespace Tinder4Jobs.Web
 {
     public partial class Startup
     {

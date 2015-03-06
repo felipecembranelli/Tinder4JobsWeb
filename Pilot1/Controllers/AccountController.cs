@@ -8,10 +8,10 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using Pilot1.Models;
-using Pilot1.Utils;
+using Tinder4Jobs.Web.ViewModels;
+using Tinder4Jobs.InfraStructure;
 
-namespace Pilot1.Controllers
+namespace Tinder4Jobs.Web.Controllers
 {
     [Authorize]
     public class AccountController : Controller

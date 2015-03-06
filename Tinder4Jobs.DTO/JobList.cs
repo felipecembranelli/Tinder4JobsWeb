@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Pilot1.Models
+namespace Tinder4Jobs.DTO
 {
     public class JobList
     {

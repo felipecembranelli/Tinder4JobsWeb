@@ -5,7 +5,15 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tinder4Jobs.Web", "Pilot1\Tinder4Jobs.Web.csproj", "{5277A552-48D8-4B64-A459-61ACFC44F3C5}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Tinder4Jobs", "Tinder4Jobs\Tinder4Jobs.sqlproj", "{00DA6051-A3B4-402D-8DCE-0648321B6279}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tinder4Jobs.Domain", "Tinder4Jobs.Domain\Tinder4Jobs.Domain.csproj", "{15347E4C-6D60-440B-A0EE-FDF39BA2C94A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tinder4Jobs.Data", "Tinder4Jobs.Data\Tinder4Jobs.Data.csproj", "{D902656F-1AB3-4AEB-90AE-5B5E7445B1C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tinder4Jobs.Services", "Tinder4Jobs.Services\Tinder4Jobs.Services.csproj", "{6C639D24-CCFE-4692-89C3-65E1395EEB2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tinder4Jobs.InfraStructure", "Tinder4Jobs.InfraStructure\Tinder4Jobs.InfraStructure.csproj", "{713D319F-F694-4389-9452-752CCD88B9E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tinder4Jobs.DTO", "Tinder4Jobs.DTO\Tinder4Jobs.DTO.csproj", "{D137EE56-A791-4B07-9C76-8422645AD6D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +25,26 @@ Global
 		{5277A552-48D8-4B64-A459-61ACFC44F3C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5277A552-48D8-4B64-A459-61ACFC44F3C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5277A552-48D8-4B64-A459-61ACFC44F3C5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{00DA6051-A3B4-402D-8DCE-0648321B6279}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{00DA6051-A3B4-402D-8DCE-0648321B6279}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{00DA6051-A3B4-402D-8DCE-0648321B6279}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{00DA6051-A3B4-402D-8DCE-0648321B6279}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{00DA6051-A3B4-402D-8DCE-0648321B6279}.Release|Any CPU.Build.0 = Release|Any CPU
-		{00DA6051-A3B4-402D-8DCE-0648321B6279}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{15347E4C-6D60-440B-A0EE-FDF39BA2C94A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15347E4C-6D60-440B-A0EE-FDF39BA2C94A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15347E4C-6D60-440B-A0EE-FDF39BA2C94A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15347E4C-6D60-440B-A0EE-FDF39BA2C94A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D902656F-1AB3-4AEB-90AE-5B5E7445B1C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D902656F-1AB3-4AEB-90AE-5B5E7445B1C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D902656F-1AB3-4AEB-90AE-5B5E7445B1C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D902656F-1AB3-4AEB-90AE-5B5E7445B1C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C639D24-CCFE-4692-89C3-65E1395EEB2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C639D24-CCFE-4692-89C3-65E1395EEB2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C639D24-CCFE-4692-89C3-65E1395EEB2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C639D24-CCFE-4692-89C3-65E1395EEB2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{713D319F-F694-4389-9452-752CCD88B9E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{713D319F-F694-4389-9452-752CCD88B9E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{713D319F-F694-4389-9452-752CCD88B9E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{713D319F-F694-4389-9452-752CCD88B9E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D137EE56-A791-4B07-9C76-8422645AD6D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D137EE56-A791-4B07-9C76-8422645AD6D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D137EE56-A791-4B07-9C76-8422645AD6D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D137EE56-A791-4B07-9C76-8422645AD6D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

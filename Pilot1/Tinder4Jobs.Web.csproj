@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Pilot1</RootNamespace>
-    <AssemblyName>Pilot1</AssemblyName>
+    <RootNamespace>Tinder4Jobs.Web</RootNamespace>
+    <AssemblyName>Tinder4Jobs.Web</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -46,6 +46,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -167,23 +169,16 @@
     </Compile>
     <Compile Include="Controllers\JobController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Data\Respositories\LinkedinRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\JobList.cs" />
-    <Compile Include="Models\LinkedinCompany.cs" />
-    <Compile Include="Models\LinkedinJob.cs" />
-    <Compile Include="Models\LinkedinJobPoster.cs" />
-    <Compile Include="Models\LinkedinUser.cs" />
-    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="ViewModels\AccountViewModels.cs" />
+    <Compile Include="IdentityModels\IdentityModels.cs" />
+    <Compile Include="ViewModels\LinkedinJob.cs" />
+    <Compile Include="ViewModels\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="Utils\CustomLinkedinAuthenticationProvider.cs" />
-    <Compile Include="Services\LinkedinService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\aspnet-Pilot1-20150219050946.mdf" />
@@ -284,15 +279,30 @@
     <Content Include="Views\Home\View.cshtml" />
     <Content Include="Views\Home\_JobDetailPartialView.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tinder4Jobs.Domain\Tinder4Jobs.Domain.csproj">
+      <Project>{15347e4c-6d60-440b-a0ee-fdf39ba2c94a}</Project>
+      <Name>Tinder4Jobs.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tinder4Jobs.InfraStructure\Tinder4Jobs.InfraStructure.csproj">
+      <Project>{713d319f-f694-4389-9452-752ccd88b9e3}</Project>
+      <Name>Tinder4Jobs.InfraStructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tinder4Jobs.Services\Tinder4Jobs.Services.csproj">
+      <Project>{6c639d24-ccfe-4692-89c3-65e1395eeb2f}</Project>
+      <Name>Tinder4Jobs.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

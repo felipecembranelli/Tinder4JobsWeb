@@ -5,10 +5,10 @@ using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
-using Pilot1.Services;
-using Pilot1.Models;
+using Tinder4Jobs.Domain;
+using Tinder4Jobs.Services;
 
-namespace Pilot1.Controllers
+namespace Tinder4Jobs.Web.Controllers
 {
     public class HomeController : Controller
     {
@@ -24,11 +24,17 @@ namespace Pilot1.Controllers
             {
 
                 joblist = new LinkedInService(users[0].LinkedinToken).GetJobSuggestions();
+
+                Session["jobList"] = joblist;
+
+                return View(joblist.Jobs.Values.ToList());
             }
 
-            Session["jobList"] = joblist;
+            else
 
-            return View(joblist.Jobs.Values.ToList());
+                return View();
+
+            
         }
 
 

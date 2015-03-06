@@ -4,8 +4,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace Pilot1.Models
+namespace Tinder4Jobs.Web
 {
+
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
@@ -32,6 +33,6 @@ namespace Pilot1.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<Pilot1.Models.LinkedinJob> LinkedinJobs { get; set; }
+        //public System.Data.Entity.DbSet<Tinder4Jobs.Domain.LinkedinJob> LinkedinJobs { get; set; }
     }
 }

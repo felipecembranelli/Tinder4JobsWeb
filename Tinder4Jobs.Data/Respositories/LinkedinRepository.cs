@@ -1,12 +1,11 @@
 ﻿using Newtonsoft.Json;
-using Owin.Security.Providers.LinkedIn;
-using Pilot1.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
+using Tinder4Jobs.Domain;
 
 namespace Pilot1.Data.Repositories
 {
