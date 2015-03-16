@@ -39,6 +39,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc">
+      <HintPath>..\packages\Autofac.Mvc5.3.3.3\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Owin.Security.Providers">
       <HintPath>..\packages\Owin.Security.Providers.1.14.0\lib\net45\Owin.Security.Providers.dll</HintPath>
@@ -158,6 +170,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\AutoFacConfig.cs" />
+    <Compile Include="App_Start\Bootstrapper.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -172,6 +186,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="LinkedinService.cs" />
+    <Compile Include="Mappings\AutoMapperConfiguration.cs" />
+    <Compile Include="Mappings\DtoToDomainModelMappingProfile.cs" />
+    <Compile Include="Mappings\DomainToViewModelMappingProfile.cs" />
+    <Compile Include="Mappings\ViewModelToDomainMappingProfile.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="IdentityModels\IdentityModels.cs" />
@@ -181,9 +200,13 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\aspnet-Pilot1-20150219050946.mdf" />
-    <Content Include="App_Data\aspnet-Pilot1-20150219050946_log.ldf">
-      <DependentUpon>aspnet-Pilot1-20150219050946.mdf</DependentUpon>
+    <Content Include="App_Data\Data.mdf" />
+    <Content Include="App_Data\Data_log.ldf">
+      <DependentUpon>Data.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\IdentityDB.mdf" />
+    <Content Include="App_Data\IdentityDB_log.ldf">
+      <DependentUpon>IdentityDB.mdf</DependentUpon>
     </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -252,18 +275,18 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Home\Account\ConfirmEmail.cshtml" />
-    <Content Include="Views\Home\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Home\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Home\Account\ForgotPassword.cshtml" />
-    <Content Include="Views\Home\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Home\Account\Login.cshtml" />
-    <Content Include="Views\Home\Account\Register.cshtml" />
-    <Content Include="Views\Home\Account\ResetPassword.cshtml" />
-    <Content Include="Views\Home\Account\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Views\Home\Account\SendCode.cshtml" />
-    <Content Include="Views\Home\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
     <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
     <Content Include="Views\Manage\ChangePassword.cshtml" />
     <Content Include="Views\Manage\Index.cshtml" />
@@ -291,13 +314,17 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Tinder4Jobs.Domain\Tinder4Jobs.Domain.csproj">
-      <Project>{15347e4c-6d60-440b-a0ee-fdf39ba2c94a}</Project>
-      <Name>Tinder4Jobs.Domain</Name>
+    <ProjectReference Include="..\Tinder4Jobs.Data\Tinder4Jobs.Data.csproj">
+      <Project>{d902656f-1ab3-4aeb-90ae-5b5e7445b1c4}</Project>
+      <Name>Tinder4Jobs.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Tinder4Jobs.InfraStructure\Tinder4Jobs.InfraStructure.csproj">
+    <ProjectReference Include="..\Tinder4Jobs.Domain\Tinder4Jobs.Model.csproj">
+      <Project>{15347e4c-6d60-440b-a0ee-fdf39ba2c94a}</Project>
+      <Name>Tinder4Jobs.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tinder4Jobs.InfraStructure\Tinder4Jobs.Infrastructure.csproj">
       <Project>{713d319f-f694-4389-9452-752ccd88b9e3}</Project>
-      <Name>Tinder4Jobs.InfraStructure</Name>
+      <Name>Tinder4Jobs.Infrastructure</Name>
     </ProjectReference>
     <ProjectReference Include="..\Tinder4Jobs.Services\Tinder4Jobs.Services.csproj">
       <Project>{6c639d24-ccfe-4692-89c3-65e1395eeb2f}</Project>
@@ -332,6 +359,7 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

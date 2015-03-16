@@ -10,7 +10,7 @@ namespace Tinder4Jobs.Web.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
             ContextKey = "Tinder4Jobs.Web.ApplicationDbContext";
         }
 

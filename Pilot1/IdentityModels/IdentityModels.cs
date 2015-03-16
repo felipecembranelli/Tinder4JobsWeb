@@ -33,6 +33,6 @@ namespace Tinder4Jobs.Web
             return new ApplicationDbContext();
         }
 
-        //public System.Data.Entity.DbSet<Tinder4Jobs.Domain.LinkedinJob> LinkedinJobs { get; set; }
+        //public System.Data.Entity.DbSet<Tinder4Jobs.Model.LinkedinJob> LinkedinJobs { get; set; }
     }
 }

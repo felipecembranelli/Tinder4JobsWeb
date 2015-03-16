@@ -1,4 +1,4 @@
-﻿@model List<Tinder4Jobs.Web.ViewModels.LinkedinJob>
+﻿@model List<Tinder4Jobs.Web.ViewModels.LinkedinJobViewModel>
 
 @{
     ViewBag.Title = "Index";
@@ -29,9 +29,9 @@
                             </a>
                         </div>
                         <div class="col-md-5">
-                            <h3>@Html.DisplayFor( item => item.Company.Name)</h3>
-                            <h4>@Html.DisplayFor(item => item.LocationDescription)</h4>
-                            <p>@Html.DisplayFor(item => item.DescriptionSnippet)</p>
+                            <h3>@Html.DisplayFor(modelItem => item.Company.Name)</h3>
+                            <h4>@Html.DisplayFor(modelItem => item.LocationDescription)</h4>
+                            <p>@Html.DisplayFor(modelItem => item.DescriptionSnippet)</p>
                             @*<a class="btn btn-primary" href="~/Job/Detail/1">View Detail <span class="glyphicon glyphicon-chevron-right"></span> </a>*@
                             @Html.ActionLink("View Detail", "JobDetail", null, null, new { id = "btnSearch", @class = "btn btn-primary" })
                         </div>
