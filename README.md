@@ -1,10 +1,10 @@
 # Tinder4JobsWeb
 
-Sample web application getting data from Linkedin using Tinder navigation style.
+Sample ASP.NET web application getting data from Linkedin using Tinder navigation style.
 
 ##Technologies:
 
-- ASP.NET MVC + AngularJS
+- ASP.NET MVC
 - Entity Framework
 
 ## Contributing
